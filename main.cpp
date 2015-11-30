@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
 
     delete train_dataset;
 
-    Dataset *test_dataset = read_images(dir + "/t10k-images-idx3-ubyte", 1000);
+    Dataset *test_dataset = read_images(dir + "/t10k-images-idx3-ubyte");
     read_labels(dir + "/t10k-labels-idx1-ubyte", test_dataset);
     for (int i = 0; i < test_dataset->size(); ++i)
         test_dataset->set_label(i, (short)(1 << test_dataset->get_label(i)));
